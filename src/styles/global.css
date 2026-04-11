@@ -2,7 +2,7 @@
 
 @theme {
   /* Re-mapped for CSM Man & Van (keeping variable names so existing code doesn't break) */
-  --color-mammoth-green: #3b82f6;      /* CSM Bright Blue */
+  --color-mammoth-green: #15803d;      /* CSM Dark Green - Update to new dark green */
   --color-mammoth-dark: #1a1a1a;       /* Dark Charcoal */
   
   /* Sleek dark slate for high-contrast buttons */

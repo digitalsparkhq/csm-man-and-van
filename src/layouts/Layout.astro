@@ -3,6 +3,20 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import QuoteModal from '../components/QuoteModal.astro';
 import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "CSM Man & Van Services | Yorkshire Removals & Clearances",
+  description = "A family-run man and van service based in Selby. Specialising in stress-free house moves, licensed waste disposal, and property clearances across Yorkshire."
+} = Astro.props;
+
+// Placeholder for now - update once live
+const siteUrl = "https://csmmanandvan.co.uk"; 
+const facebookUrl = "https://www.facebook.com/people/CSM-Man-Van-Services/61554871155041/";
 ---
 
 <!doctype html>
@@ -10,19 +24,41 @@ import Footer from '../components/Footer.astro';
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
         <meta name="generator" content={Astro.generator} />
-        <title>CSM Man & Van Services | Yorkshire Removals & Clearances</title>
+        
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={`${siteUrl}/images/hero1.jpg`} />
+
+        <script type="application/ld+json" set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MovingCompany",
+          "name": "CSM Man & Van Services",
+          "image": `${siteUrl}/images/csm-logo.jpg`,
+          "url": siteUrl,
+          "telephone": "07572289851",
+          "email": "csm.mavservices@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Selby",
+            "postalCode": "YO8 8DZ",
+            "addressCountry": "UK"
+          },
+          "areaServed": ["Selby", "Yorkshire"],
+          "sameAs": [facebookUrl]
+        })} />
     </head>
-    <body class="selection:bg-mammoth-green selection:text-charcoal bg-white text-charcoal min-h-screen font-sans">
-    <Header />
-    
-    <main>
-          <slot />
-    </main>
-
-    <Footer />
-
-    <QuoteModal />
+    <body class="selection:bg-mammoth-green selection:text-white bg-white text-charcoal min-h-screen font-sans">
+        <Header />
+        <main><slot /></main>
+        <Footer />
+        <QuoteModal />
     </body>
 </html>
