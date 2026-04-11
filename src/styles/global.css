@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Re-mapped for One Man One Van (keeping variable names so existing code doesn't break) */
-  --color-mammoth-green: #3df566;      /* OMOV Neon Green */
-  --color-mammoth-dark: #1a1a1a;       /* OMOV Dark Charcoal */
+  /* Re-mapped for CSM Man & Van (keeping variable names so existing code doesn't break) */
+  --color-mammoth-green: #3b82f6;      /* CSM Bright Blue */
+  --color-mammoth-dark: #1a1a1a;       /* Dark Charcoal */
   
-  /* Shifted the old amber to a sleek dark slate for high-contrast buttons */
+  /* Sleek dark slate for high-contrast buttons */
   --color-mammoth-orange: #1f2937;     
   
   --color-charcoal: #252a27;           

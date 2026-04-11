@@ -2,28 +2,28 @@
 // 1. Projects with BOTH Before & After photos
 const beforeAfterProjects = [
   {
-    title: "Garden Maintenance & Overhaul",
-    beforeImg: "/images/garden-before.jpeg",
-    afterImg: "/images/garden-after.jpeg",
+    title: "Waste Disposal",
+    beforeImg: "/images/waste-disposal-before.jpg",
+    afterImg: "/images/waste-disposal-after.jpg",
   },
   {
-    title: "House Move & Clearance",
-    beforeImg: "/images/house-moving-before.jpg",
-    afterImg: "/images/house-moving-after.jpeg",
+    title: "Property Clearances",
+    beforeImg: "/images/property-clearance-before.jpg",
+    afterImg: "/images/property-clearance-after.jpg",
   }
 ];
 
 // 2. Projects with SINGLE photos
 const singleProjects = [
   {
-    title: "House Cleaning",
-    desc: "Deep cleans and decluttering for a fresh, welcoming home environment.",
-    img: "/images/house-cleaning.jpeg"
+    title: "House & Office Moves",
+    desc: "Careful and efficient transport of your furniture and belongings.",
+    img: "/images/house-office-moves.jpg"
   },
   {
-    title: "Waste Management",
-    desc: "Heavy rubble and tenant property clearances.",
-    img: "/images/waste-clearance.jpg"
+    title: "Store Pickups",
+    desc: "Reliable transport for heavy or bulky store purchases directly to your door.",
+    img: "/images/store-pickups.jpg"
   }
 ];
 ---
@@ -65,11 +65,11 @@ const singleProjects = [
               <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-sm text-white text-xs font-black px-3 py-1 rounded-sm uppercase tracking-wider">Before</div>
             </div>
 
-            <div class="absolute inset-y-0 left-1/2 w-1 bg-mammoth-green z-10 transform -translate-x-1/2 shadow-[0_0_10px_rgba(61,245,102,0.5)]"></div>
+            <div class="absolute inset-y-0 left-1/2 w-1 bg-mammoth-green z-10 transform -translate-x-1/2 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
 
             <div class="w-1/2 relative h-full overflow-hidden">
               <img src={project.afterImg} alt="After" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div class="absolute top-3 right-3 bg-mammoth-green text-charcoal text-xs font-black px-3 py-1 rounded-sm uppercase tracking-wider shadow-sm">After</div>
+              <div class="absolute top-3 right-3 bg-mammoth-green text-white md:text-charcoal text-xs font-black px-3 py-1 rounded-sm uppercase tracking-wider shadow-sm">After</div>
             </div>
 
           </div>
@@ -80,7 +80,7 @@ const singleProjects = [
     </div>
 
     <h3 class="text-2xl font-black uppercase text-charcoal mb-8 border-l-4 border-mammoth-green pl-4">Clearances & Transport</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       {singleProjects.map((project) => (
         <div class="group relative aspect-video overflow-hidden bg-gray-100 rounded-sm border-2 border-transparent hover:border-mammoth-green shadow-md transition-all duration-300 hover:-translate-y-1">
           <img src={project.img} alt={project.title} class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" />
@@ -93,53 +93,8 @@ const singleProjects = [
       ))}
     </div>
 
-    <div class="bg-charcoal rounded-sm shadow-2xl border-t-8 border-mammoth-green p-8 md:p-12 reveal-on-scroll">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
-        <div class="text-left">
-          <h3 class="text-3xl md:text-4xl font-black uppercase text-white mb-6">Attic Insulation <span class="text-mammoth-green block mt-2">Installation</span></h3>
-          
-          <div class="space-y-4 text-gray-300 text-lg leading-relaxed mb-8">
-            <p>Watch our team in action as we tackle a severe loft insulation issue for a completely satisfied customer.</p>
-            <p>Wet, damaged insulation can lead to dampness, mold, and massive heat loss. In this video, you can see our efficient process of completely uninstalling and safely disposing of the ruined material.</p>
-            <p>Once cleared, we prep the space and lay down a fresh, high-quality dry installation to instantly improve the property's energy efficiency.</p>
-          </div>
-
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-white font-bold tracking-wide">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-mammoth-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Complete Wet Insulation Removal
-            </li>
-            <li class="flex items-center gap-3 text-white font-bold tracking-wide">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-mammoth-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Safe & Licensed Disposal
-            </li>
-            <li class="flex items-center gap-3 text-white font-bold tracking-wide">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-mammoth-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Fresh Dry Reinstallation
-            </li>
-          </ul>
-        </div>
-        
-        <div class="flex justify-center md:justify-end">
-          <div class="bg-black rounded-sm overflow-hidden border-4 border-gray-700 shadow-2xl inline-block">
-            <iframe 
-              src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F891550843751738%2F&show_text=false&width=267&t=0" 
-              width="267" 
-              height="476" 
-              style="border:none;overflow:hidden" 
-              scrolling="no" 
-              allowfullscreen="true" 
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-            </iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="mt-16 text-center reveal-on-scroll">
-      <button class="open-quote-btn px-8 py-5 bg-charcoal hover:bg-mammoth-green text-white hover:text-charcoal font-black text-lg uppercase transition-all shadow-xl transform hover:-translate-y-1 inline-block border-b-4 border-black hover:border-green-600 cursor-pointer rounded-sm">
+    <div class="mt-8 text-center reveal-on-scroll">
+      <button class="open-quote-btn px-8 py-5 bg-charcoal hover:bg-mammoth-green text-white hover:text-white font-black text-lg uppercase transition-all shadow-xl transform hover:-translate-y-1 inline-block border-b-4 border-black hover:border-blue-700 cursor-pointer rounded-sm">
         Start Your Transformation
       </button>
     </div>
@@ -166,11 +121,11 @@ const singleProjects = [
         <div class="absolute top-4 left-4 md:top-6 md:left-6 bg-black/80 backdrop-blur-sm text-white text-sm md:text-lg font-black px-4 py-2 rounded-sm uppercase tracking-wider">Before</div>
       </div>
       
-      <div class="absolute inset-y-0 left-1/2 w-1.5 md:w-2 bg-mammoth-green z-10 transform -translate-x-1/2 shadow-[0_0_20px_rgba(61,245,102,0.6)]"></div>
+      <div class="absolute inset-y-0 left-1/2 w-1.5 md:w-2 bg-mammoth-green z-10 transform -translate-x-1/2 shadow-[0_0_20px_rgba(59,130,246,0.6)]"></div>
       
       <div class="w-1/2 relative h-full bg-black">
         <img id="lightbox-after" src="" alt="Full After View" class="w-full h-full object-contain md:object-cover" />
-        <div class="absolute top-4 right-4 md:top-6 md:right-6 bg-mammoth-green text-charcoal text-sm md:text-lg font-black px-4 py-2 rounded-sm uppercase tracking-wider shadow-lg">After</div>
+        <div class="absolute top-4 right-4 md:top-6 md:right-6 bg-mammoth-green text-white md:text-charcoal text-sm md:text-lg font-black px-4 py-2 rounded-sm uppercase tracking-wider shadow-lg">After</div>
       </div>
 
     </div>
