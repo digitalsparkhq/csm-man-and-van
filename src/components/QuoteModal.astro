@@ -1,0 +1,196 @@
+---
+---
+<div id="quote-modal" class="fixed inset-0 z-[100] hidden bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 overflow-y-auto">
+  
+  <div class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+    
+    <div class="bg-charcoal border-t-8 border-mammoth-green w-full max-w-3xl shadow-2xl relative flex flex-col transform scale-95 transition-transform duration-300 mx-auto rounded-sm" id="modal-content">
+      
+      <button id="close-quote-modal" class="absolute top-4 right-4 text-gray-400 hover:text-charcoal bg-black/50 hover:bg-mammoth-green p-2 rounded-full transition-colors z-10 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="p-8 md:p-10">
+        <h2 class="text-3xl font-black uppercase text-white mb-2">Request an <span class="text-mammoth-green">OMOV</span> Quote</h2>
+        <p class="text-gray-400 mb-8 font-medium">Fill out the details below, and we'll get back to you with a competitive, no-obligation price.</p>
+
+        <form name="quote-request" method="POST" data-netlify="true" enctype="multipart/form-data" class="space-y-6">
+          <input type="hidden" name="form-name" value="quote-request" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Full Name *</label>
+              <input type="text" name="name" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="John Doe">
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Phone Number *</label>
+              <input type="tel" name="phone" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="07123 456789">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Email Address</label>
+              <input type="email" name="email" class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="john@example.com">
+            </div>
+          </div>
+
+          <hr class="border-gray-700 my-4" />
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Address Line 1 *</label>
+              <input type="text" name="address_1" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="House Name/Number and Street">
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Address Line 2</label>
+              <input type="text" name="address_2" class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="Apartment, suite, unit, etc. (optional)">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Town / City *</label>
+                <input type="text" name="city" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors rounded-sm" placeholder="e.g. Catterick">
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Postcode *</label>
+                <input type="text" name="postcode" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors uppercase rounded-sm" placeholder="DL9 4">
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-gray-700 my-4" />
+
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Service Required *</label>
+                <select name="service" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors appearance-none cursor-pointer rounded-sm">
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="House & Office Moves">House & Office Moves</option>
+                  <option value="Waste Management">Waste Management</option>
+                  <option value="Garden Maintenance">Garden Maintenance</option>
+                  <option value="Handyman & Repairs">Handyman & Repairs</option>
+                  <option value="Hazardous Waste">Hazardous Waste</option>
+                  <option value="Bulky Item Delivery">Bulky Item Delivery</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Timescale *</label>
+                <select name="timescale" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors appearance-none cursor-pointer rounded-sm">
+                  <option value="" disabled selected>When do you need it done?</option>
+                  <option value="ASAP">ASAP (Urgent)</option>
+                  <option value="Within 3 Days">Within 3 Days</option>
+                  <option value="Within 1 Week">Within 1 Week</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Type of Work (Brief Description) *</label>
+              <textarea name="description" rows="4" required class="w-full bg-black/50 border border-gray-600 focus:border-mammoth-green text-white px-4 py-3 outline-none transition-colors resize-none rounded-sm" placeholder="Please describe the job (e.g., Moving a piano, full garden clearance, wet insulation removal)..."></textarea>
+            </div>
+          </div>
+
+          <div class="bg-black/30 p-6 border border-dashed border-gray-600 rounded-sm">
+            <label class="block text-sm font-bold text-gray-300 uppercase mb-2">Upload Photos (Optional)</label>
+            <p class="text-xs text-gray-400 mb-4">A picture paints a thousand words and helps us give an accurate quote. <br/> <strong class="text-mammoth-green">Max file size: 5MB per image. Max 3 images.</strong></p>
+            
+            <input type="file" name="photos" id="photo-upload" accept="image/png, image/jpeg, image/jpg, image/webp" multiple class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-bold file:uppercase file:bg-mammoth-green file:text-charcoal hover:file:bg-green-400 cursor-pointer transition-colors rounded-sm" />
+            <p id="file-error" class="text-red-500 text-xs font-bold mt-2 hidden">One or more files exceed the 5MB limit. Please choose smaller images.</p>
+          </div>
+
+          <button type="submit" class="w-full bg-mammoth-green hover:bg-green-400 text-charcoal font-black text-xl uppercase py-5 transition-all shadow-lg transform hover:-translate-y-1 cursor-pointer rounded-sm">
+            Send Booking Request
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('quote-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('close-quote-modal');
+
+    // Make the modal open globally for ANY button with the class 'open-quote-btn'
+    const openBtns = document.querySelectorAll('.open-quote-btn');
+
+    function openModal() {
+      if (!modal || !modalContent) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('block'); // Ensure it renders
+      
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+      }, 10);
+    }
+
+    function closeModal() {
+      if (!modal || !modalContent) return;
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('block');
+        document.body.style.overflow = ''; 
+      }, 300);
+    }
+
+    // Attach listener to ALL matching buttons
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior if it's a link
+        openModal();
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    
+    // Close on background click
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        // If they clicked the outer background (not the inner form)
+        if (e.target.classList.contains('min-h-screen')) {
+          closeModal();
+        }
+      });
+    }
+
+    // File Validation
+    const fileInput = document.getElementById('photo-upload');
+    const fileError = document.getElementById('file-error');
+    const maxSizeInBytes = 5 * 1024 * 1024;
+
+    if (fileInput && fileError) {
+      fileInput.addEventListener('change', function() {
+        let isValid = true;
+        if (this.files.length > 3) {
+           alert("You can only upload a maximum of 3 images.");
+           this.value = ''; 
+           return;
+        }
+        for (let i = 0; i < this.files.length; i++) {
+          if (this.files[i].size > maxSizeInBytes) {
+            isValid = false;
+            break;
+          }
+        }
+        if (!isValid) {
+          fileError.classList.remove('hidden');
+          this.value = ''; 
+        } else {
+          fileError.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,163 @@
+---
+const pathname = Astro.url.pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 font-sans transition-all duration-500" style="background-color: transparent;">
+  
+  <div id="top-bar" class="overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 100px; opacity: 1;">
+    
+    <div class="bg-charcoal/80 text-gray-300 text-sm py-3 px-6 border-b border-white/10">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-6">
+          <a href="tel:07398719488" class="flex items-center gap-2 hover:text-mammoth-green transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <span class="font-bold text-base">Eric: 07398 719488</span>
+          </a>
+          <a href="tel:07557768898" class="hidden md:flex items-center gap-2 hover:text-mammoth-green transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <span class="font-bold text-base">Craig: 07557 768898</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-5">
+          <a href="https://www.facebook.com/people/One-Man-One-Van/100083499543042/" target="_blank" rel="noopener noreferrer" class="hover:text-mammoth-green transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/447398719488" target="_blank" rel="noopener noreferrer" class="hover:text-mammoth-green transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 001.602 6.001L0 24l6.19-1.604A12 12 0 0012.056 24 12 12 0 0024 12c0-6.627-5.373-12-12.056-12zM12.056 22A10 10 0 015.353 20.32l-.382-.226-4.008 1.037 1.056-3.905-.248-.395A10 10 0 1112.056 22zm5.558-7.512c-.305-.152-1.804-.891-2.083-.993-.279-.102-.482-.152-.686.152-.203.305-.788.993-.966 1.197-.178.203-.356.228-.661.076-.305-.152-1.287-.475-2.453-1.516-.906-.81-1.517-1.809-1.696-2.114-.178-.305-.019-.469.133-.62.138-.138.305-.356.458-.534.152-.178.203-.305.305-.508.102-.203.051-.381-.025-.534-.076-.152-.686-1.652-.94-2.261-.247-.591-.497-.512-.686-.521-.178-.009-.381-.009-.584-.009-.203 0-.534.076-.813.381-.279.305-1.067 1.042-1.067 2.54 0 1.498 1.093 2.946 1.246 3.149.152.203 2.147 3.275 5.2 4.59.725.313 1.291.5 1.733.64.728.232 1.391.199 1.914.12.585-.088 1.804-.737 2.058-1.448.254-.711.254-1.32.178-1.448-.076-.127-.28-.203-.585-.356z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-6 py-4 md:py-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="/" class="flex-shrink-0">
+        <img src="/images/logo.png" alt="One Man One Van" class="h-20 md:h-28 w-auto transition-all duration-300 drop-shadow-lg rounded-sm" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-white font-bold uppercase tracking-wide">
+        <a href="/" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">Home</a>
+        <a href="/#services" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">Services</a>
+        <a href="/#gallery" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">Gallery</a>
+        <a href="/#reviews" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">Reviews</a>
+        <a href="/#about" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">About</a>
+        <a href="/contact" class="nav-link hover:text-mammoth-green transition-colors pb-1 border-b-2 border-transparent">Contact</a>
+      </nav>
+
+      <button id="open-menu-btn" class="md:hidden text-white hover:text-mammoth-green transition-colors focus:outline-none z-50 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-[55] hidden opacity-0 transition-opacity duration-300 md:hidden backdrop-blur-sm"></div>
+
+<div id="mobile-drawer" class="fixed inset-y-0 right-0 w-64 bg-charcoal shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-6 px-6 gap-6 z-[60] border-l border-white/10">
+  
+  <div class="flex justify-end mb-4">
+    <button id="close-menu-btn" class="text-white hover:text-mammoth-green transition-colors focus:outline-none cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <a href="/" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green border-b border-white/5 pb-2">Home</a>
+  <a href="/#services" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green border-b border-white/5 pb-2">Services</a>
+  <a href="/#gallery" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green border-b border-white/5 pb-2">Gallery</a>
+  <a href="/#reviews" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green border-b border-white/5 pb-2">Reviews</a>
+  <a href="/#about" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green border-b border-white/5 pb-2">About</a>
+  <a href="/contact" class="mobile-link text-xl font-bold uppercase text-white hover:text-mammoth-green pb-2">Contact</a>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- Scroll Logic for Sticky Header ---
+    const siteHeader = document.getElementById('site-header');
+    const topBar = document.getElementById('top-bar');
+
+    if (siteHeader && topBar) {
+      function handleScroll() {
+        if (window.scrollY > 20) {
+          topBar.style.maxHeight = '0px';
+          topBar.style.opacity = '0';
+          // Frosted gray background
+          siteHeader.style.backgroundColor = 'rgba(128, 128, 128, 0.9)';
+          siteHeader.classList.add('shadow-xl', 'backdrop-blur-md');
+        } else {
+          topBar.style.maxHeight = '100px';
+          topBar.style.opacity = '1';
+          siteHeader.style.backgroundColor = 'transparent';
+          siteHeader.classList.remove('shadow-xl', 'backdrop-blur-md');
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); 
+    }
+
+    // --- Mobile Menu Toggle Logic ---
+    const openBtn = document.getElementById('open-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const overlay = document.getElementById('mobile-overlay');
+    const drawer = document.getElementById('mobile-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    function openMenu() {
+      overlay.classList.remove('hidden');
+      // small delay to allow display:block to apply before animating opacity
+      setTimeout(() => {
+        overlay.classList.remove('opacity-0');
+        overlay.classList.add('opacity-100');
+        drawer.classList.remove('translate-x-full');
+      }, 10);
+      document.body.style.overflow = 'hidden'; // prevent background scrolling
+    }
+
+    function closeMenu() {
+      drawer.classList.add('translate-x-full');
+      overlay.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0');
+      document.body.style.overflow = ''; // restore scrolling
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+      }, 300);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // --- Active Link Highlighting Logic ---
+    function updateActiveLinks() {
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash;
+      const links = document.querySelectorAll('.nav-link');
+
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.remove('border-mammoth-green', 'text-mammoth-green');
+        link.classList.add('border-transparent');
+
+        if (href === currentPath + currentHash || (href === '/' && currentPath === '/' && currentHash === '')) {
+          link.classList.add('border-mammoth-green', 'text-mammoth-green');
+          link.classList.remove('border-transparent');
+        }
+      });
+    }
+
+    window.addEventListener('hashchange', updateActiveLinks);
+    updateActiveLinks();
+  });
+</script>

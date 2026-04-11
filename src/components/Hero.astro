@@ -1,0 +1,76 @@
+---
+// Kept the 1st Unsplash image, swapped the 2nd and 3rd to your local images
+const bgImages = [
+  "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&q=80&w=1920",
+  "/images/hero2.jpg",
+  "/images/hero3.jpg" 
+];
+---
+
+<section class="relative min-h-screen flex items-center pt-48 md:pt-56 pb-20 px-6 overflow-hidden">
+  
+  <div id="hero-slider" class="absolute inset-0 z-0 bg-charcoal">
+    {bgImages.map((img, index) => (
+      <div 
+        class={`hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+        style={`background-image: url('${img}');`}
+      ></div>
+    ))}
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto w-full">
+    <div class="max-w-3xl">
+      
+      <h1 class="text-5xl md:text-7xl font-black uppercase leading-[1.1] mb-6 text-white drop-shadow-lg">
+        <span class="text-mammoth-green block mb-2">One Man One Van</span> 
+        We Really Do It All
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-200 mb-10 font-medium max-w-2xl drop-shadow-md">
+        From household removals and hazardous waste to garden maintenance and handyman jobs. Fast, friendly, and reliable service.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 mb-10">
+        <button class="open-quote-btn px-8 py-5 bg-mammoth-green hover:bg-white text-charcoal font-black text-lg uppercase transition-all shadow-xl transform hover:-translate-y-1 text-center cursor-pointer">
+          Get Free Quote
+        </button>
+        <a href="tel:07398719488" class="px-8 py-5 bg-transparent border-4 border-white text-white hover:bg-white hover:text-charcoal font-black text-lg uppercase transition-all text-center backdrop-blur-sm cursor-pointer drop-shadow-md">
+          Call 07398 719488
+        </a>
+      </div>
+
+      <div class="inline-flex items-center gap-3 bg-black/60 border border-white/20 px-4 py-3 rounded-sm backdrop-blur-sm">
+        <div class="flex text-mammoth-green">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+        </div>
+        <span class="text-gray-200 font-bold text-sm md:text-base tracking-wide uppercase">
+          3 Years in Business • <span class="text-mammoth-green">Fully Insured & Licenced</span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Background Image Crossfade Logic
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    if (slides.length > 1) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+      }, 5000); 
+    }
+  });
+</script>
