@@ -7,11 +7,13 @@ import Footer from '../components/Footer.astro';
 export interface Props {
   title?: string;
   description?: string;
+  robots?: string;
 }
 
 const { 
   title = "CSM Man & Van Services | Yorkshire Removals & Clearances",
-  description = "A family-run man and van service based in Selby. Specialising in stress-free house moves, licensed waste disposal, and property clearances across Yorkshire."
+  description = "A family-run man and van service based in Selby. Specialising in stress-free house moves, licensed waste disposal, and property clearances across Yorkshire.",
+  robots = "index, follow"
 } = Astro.props;
 
 // Placeholder for now - update once live
@@ -30,6 +32,9 @@ const facebookUrl = "https://www.facebook.com/people/CSM-Man-Van-Services/615548
         <title>{title}</title>
         <meta name="title" content={title} />
         <meta name="description" content={description} />
+        
+        <!-- The dynamic robots tag for your 404 page -->
+        <meta name="robots" content={robots} />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
@@ -54,6 +59,14 @@ const facebookUrl = "https://www.facebook.com/people/CSM-Man-Van-Services/615548
           "areaServed": ["Selby", "Yorkshire"],
           "sameAs": [facebookUrl]
         })} />
+
+        <!-- Google Tag Manager -->
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PPNJDX5N"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        </script>
     </head>
     <body class="selection:bg-mammoth-green selection:text-white bg-white text-charcoal min-h-screen font-sans overflow-x-hidden">
         <Header />

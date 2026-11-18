@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Page Not Found | CSM Man & Van Services"
+  description="The page you are looking for does not exist."
+  robots="noindex, nofollow"
+>
+  <!-- Added pt-48 to push it down, and changed to bg-charcoal so the white header text is visible -->
+  <section class="min-h-[80vh] flex flex-col items-center justify-center pt-48 pb-24 px-6 text-center bg-charcoal border-b-8 border-mammoth-green">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-8xl md:text-9xl font-black text-mammoth-green mb-4 drop-shadow-sm">
+        404
+      </h1>
+      
+      <!-- Changed text to white -->
+      <h2 class="text-3xl md:text-5xl font-black uppercase text-white mb-6">
+        Page Not Found
+      </h2>
+      
+      <!-- Changed text to gray-400 for better contrast on dark background -->
+      <p class="text-xl text-gray-400 mb-12 font-medium leading-relaxed">
+        Sorry, we couldn't find the page you were looking for. It might have been moved, deleted, or the URL was typed incorrectly.
+      </p>
+      
+      <!-- Updated button colors to pop against the dark background -->
+      <a href="/" class="inline-flex items-center gap-2 bg-mammoth-green hover:bg-white text-charcoal hover:text-charcoal font-black text-lg uppercase px-8 py-5 transition-all shadow-xl transform hover:-translate-y-1 rounded-sm cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Return to Homepage
+      </a>
+    </div>
+  </section>
+</Layout>
